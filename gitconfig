@@ -1,0 +1,6 @@
+[user]
+	name = tataudat
+	email = me@tatd.at
+[core]
+	excludesfile = /Users/dat/.gitignore_global
+	editor = /usr/local/bin/nvim
