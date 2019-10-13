@@ -1,10 +1,11 @@
 # directories aliases
-alias win="cd $HOME/src/compete/"
-alias con="cd $HOME/src/contribute/"
-alias new="cd $HOME/src/create/"
+alias win="cd $HOME/src/compete/ && cd"
+alias con="cd $HOME/src/contribute/ && cd"
+alias new="cd $HOME/src/create/ && cd"
+alias work="cd $HOME/src/work/ && cd"
+
 alias blog="cd $HOME/src/personal/blog"
 alias dot="cd $HOME/src/personal/dotfiles"
-alias work="cd $HOME/src/work/"
 
 # OS
 alias hs="history | grep"
@@ -24,8 +25,11 @@ alias v="nvim"
 
 # git
 alias gl="git log --graph --abbrev-commit --color --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias ga="git add"
 alias gaa="git add -A"
-alias gcm="git commit -m"
+alias gc="git commit -m"
+alias gca="git commit -am"
+alias gpo="git push origin"
 alias gcb="git checkout -b"
 alias gs="git stash"
 alias gnew="git clean -n -d"
