@@ -13,4 +13,9 @@ ln -s "$(pwd)/gitignore_global" $HOME/.gitignore_global
 ln -s "$(pwd)/secrets/ssh/"     $HOME/.ssh
 ln -s "$(pwd)/secrets/keys/"    $HOME/.keys
 
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    ln -s "$(pwd)/i3/i3_config"       $HOME/.config/i3/config
+    ln -s "$(pwd)/i3/i3status_config" $HOME/.config/i3status/config
+fi
+
 gpg --import keys/gpg.key
