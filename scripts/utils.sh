@@ -13,9 +13,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # change keyboard interupted to Ctrl+o
     stty intr ^o
 
-    source ./kaggle.sh
-    source ./nvidia.sh
-    source ./domain_ip_update.sh
+    source $HOME/.scripts/kaggle.sh
+    source $HOME/.scripts/nvidia.sh
+    source $HOME/.scripts/domain_ip_update.sh
 fi
 
 backup() {

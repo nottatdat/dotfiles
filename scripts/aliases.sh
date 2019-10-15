@@ -17,9 +17,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     alias open="xdg-open"
 fi
 
-alias trash="cd $HOME/.Trash && ll"
-alias clean_trash="rm -rf $HOME/.Trash/*"
-
 # applications
 alias v="nvim"
 

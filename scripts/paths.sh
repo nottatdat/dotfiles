@@ -16,7 +16,6 @@ export GOPATH="$HOME/.go"
 export CUDA_HOME="/usr/local/cuda"
 
 export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/frameworks/anaconda3/bin:$PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/frameworks/tensorswift/usr/bin:$PATH"

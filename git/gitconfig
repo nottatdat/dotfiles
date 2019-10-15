@@ -4,3 +4,5 @@
 [core]
 	excludesfile = /Users/dat/.gitignore_global
 	editor = /usr/local/bin/nvim
+[credential]
+	helper = store

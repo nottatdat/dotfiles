@@ -7,5 +7,5 @@ update_ip() {
 }
 
 update_titan_ip() {
-	update_ip $CF_ZONE $CF_SSH_RECORD $CF_API_EMAIL $CF_API_KEY $1
+	update_ip $CF_ZONE $CF_DNS_RECORD $CF_API_EMAIL $CF_API_KEY $1
 }
