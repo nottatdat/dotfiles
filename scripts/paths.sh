@@ -1,3 +1,6 @@
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 apath() {
 	new_path="$(pwd)"
 	if [ $# -eq 1 ]; then new_path=$1 fi

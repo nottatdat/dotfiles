@@ -8,19 +8,15 @@ green="\033[0;32m"
 yellow="\033[0;33m"
 blue="\033[0;34m"
 
-# change keyboard interupted to Ctrl+o
-stty intr ^o
-
 # setting for linux server
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    # change keyboard interupted to Ctrl+o
+    stty intr ^o
+
     source ./kaggle.sh
     source ./nvidia.sh
     source ./domain_ip_update.sh
 fi
-
-rm() {
-    mv $@ ~/.Trash/
-}
 
 backup() {
     cp $1 $1.backup
