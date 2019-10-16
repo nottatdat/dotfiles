@@ -35,7 +35,7 @@ alias gold="git clean -f -d"
 # rust binaries
 alias grep="rg"
 
-alias ls="lsd --icon never --color never"
+alias ls="lsd"
 alias l="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
