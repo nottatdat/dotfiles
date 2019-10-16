@@ -8,10 +8,15 @@ backup_folder() {
     mv $1 $1.bak
 }
 
+symlink() {
+    ln -s $(pwd)/$1 $HOME/$2
+}
+
 # backup
 backup_file $HOME/.zshrc
 backup_file $HOME/.gitconfig
 backup_file $HOME/.gitignore_global
+backup_file $HOME/.tmux.conf
 
 backup_folder $HOME/.scripts
 backup_folder $HOME/.keys
@@ -20,24 +25,26 @@ backup_folder $HOME/.config/alacritty
 backup_folder $HOME/.config/nvim
 
 # create symbolic links
-ln -s "$(pwd)/zshrc"                $HOME/.zshrc
-ln -s "$(pwd)/git/gitconfig"        $HOME/.gitconfig
-ln -s "$(pwd)/git/gitignore_global" $HOME/.gitignore_global
+symlink zshrc                .zshrc
+symlink git/gitconfig        .gitconfig
+symlink git/gitignore_global .gitignore_global
+symlink tmux.conf            .tmux.conf
 
-ln -s "$(pwd)/scripts"              $HOME/.scripts
-ln -s "$(pwd)/secrets/ssh"          $HOME/.ssh
-ln -s "$(pwd)/secrets/keys"         $HOME/.keys
-ln -s "$(pwd)/nvim"                 $HOME/.config/nvim
-ln -s "$(pwd)/alacritty"            $HOME/.config/alacritty
+symlink scripts      .scripts
+symlink secrets/ssh  .ssh
+symlink secrets/keys .keys
+symlink nvim         .config/nvim
+symlink alacritty    .config/alacritty
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     backup_folder $HOME/.config/i3
     mkdir $HOME/.config/i3
-    ln -s "$(pwd)/i3/i3_config"       $HOME/.config/i3/config
-    
+    symlink i3/i3_config .config/i3/config
+
     backup_folder $HOME/.config/i3status
     mkdir $HOME/.config/i3status
-    ln -s "$(pwd)/i3/i3status_config" $HOME/.config/i3status/config
+    symlink i3/i3status_config .config/i3status/config
 fi
 
 gpg --import secrets/gpg/gpg.key
+
