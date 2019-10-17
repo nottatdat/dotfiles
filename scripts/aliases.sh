@@ -43,6 +43,7 @@ alias lang="con languages"
 alias tool="con tools"
 alias dist="con distributed-systems"
 
+
 ### OS
 alias hs="history | grep"
 alias cdback="cd $OLDPWD"
@@ -53,10 +54,14 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     alias open="xdg-open"
 fi
 
+
 ### applications
 alias v="nvim"
+alias grep="rg"
 
-alias tat="tmux a -t"
+# tmux
+alias tls="tmux ls"
+alias tat="tmux attach -t"
 alias tns="tmux new -s"
 
 # git
@@ -67,16 +72,16 @@ alias gc="git commit -m"
 alias gca="git commit -am"
 alias gpo="git push origin"
 alias gcb="git checkout -b"
-alias gs="git stash"
+alias gcm="git checkout master"
+alias gsa="git stash"
+alias gsp="git stash pop"
 alias gnew="git clean -n -d"
-alias gold="git clean -f -d"
+alias gclean="git clean -f -d"
+alias gpurge="git clean -x -d -f"
 
-alias grep="rg"
-
-# ls alternative
+# use lsd as ls alternative
 alias ls="lsd"
 alias l="ls -l"
-alias la="ls -a"
-alias lla="ls -la"
+alias la="l -a"
 alias lt="ls --tree"
 
