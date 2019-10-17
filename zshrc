@@ -14,4 +14,3 @@ source ~/.scripts/utils.sh
 source ~/.scripts/paths.sh
 source ~/.scripts/conda.sh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
