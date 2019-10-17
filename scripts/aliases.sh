@@ -1,20 +1,31 @@
-### directories aliases
+# helper function for cd command
+cdforward() {
+    for var in "$@"; do
+        if [ -d $var ]; then
+            cd $var
+        else
+            echo "Folder $var does not exist in $(pwd)"
+            return 1
+        fi
+    done
+    return 0
+}
+
 cdwrap() {
-    if [ "$#" -eq 2 ]; then
-        cd $1/$2
-    elif [ "$#" -eq 1 ]; then
-        cd $1
-    elif [ "$#" -eq 0 ]; then
-        cd $HOME
+    if (( $# >= 1 )); then
+        cdforward $@; return $?
+    else
+        cd $HOME; return 0
     fi
 }
 
-alias win="cdwrap $HOME/src/compete/"
-alias new="cdwrap $HOME/src/create/"
-alias work="cdwrap $HOME/src/work/"
+### directories aliases
+alias win="cdwrap $HOME/src/compete"
+alias new="cdwrap $HOME/src/create"
+alias work="cdwrap $HOME/src/work"
 
 # personal directories aliases
-alias dat="cdwrap $HOME/src/personal/"
+alias dat="cdwrap $HOME/src/personal"
 alias blog="dat blog"
 alias dot="dat dotfiles"
 alias note="dat notes"
@@ -25,7 +36,7 @@ alias leet="gym leetcode"
 alias euler="gym euler"
 
 # opensource contribute directories aliases
-alias con="cdwrap $HOME/src/contribute/"
+alias con="cdwrap $HOME/src/contribute"
 alias ml="con machine-learning"
 alias lang="con languages"
 alias tool="con tools"
