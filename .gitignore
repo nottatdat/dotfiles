@@ -1,5 +1,2 @@
 # Remove private keys
 secrets/*
-!secrets/ssh/
-secrets/ssh/*
-!secrets/ssh/config
