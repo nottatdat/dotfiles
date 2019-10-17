@@ -24,7 +24,11 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 fi
 
 # set paths for TensorFlow for Swift
-export PATH="$HOME/frameworks/tensorswift/usr/bin:$PATH"
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    export PATH="$HOME/frameworks/tensorswift/usr/bin:$PATH"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    export PATH="/Library/Developer/Toolchains/swift-latest/usr/bin:$PATH"
+fi
 
 source $HOME/.ghcup/env
 
