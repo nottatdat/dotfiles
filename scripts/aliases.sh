@@ -45,7 +45,7 @@ alias dist="con distributed-systems"
 
 
 ### OS
-# usual command
+## usual commands
 alias hs="history | grep"
 alias cdback="cd $OLDPWD"
 alias c="clear"
@@ -54,7 +54,7 @@ alias chksum="shasum -a 256 "
 alias now="date +'%T'"
 alias nowdate="date +'%d-%m-%Y'"
 
-# network related
+## network related
 alias www="python -m SimpleHTTPServer 8000"
 alias speed="speedtest-cli --server 2406 --simple"
 alias ip="curl ipinfo.io/ip"
@@ -62,6 +62,7 @@ alias ping="ping -c 5"
 alias fastping="ping -c 100 -s.2"
 alias ports="netstat -tulanp"
 
+## add safety nets
 # do not delete / or prompt if deleting more than 3 files at a time
 alias rm='rm -I --preserve-root'
 
@@ -110,9 +111,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     alias pbpaste="xclip -selection clipboard -o"
     alias open="xdg-open"
 
-    # install with apt-get
-    alias apt-get="sudo apt-get"
-    alias updatey="sudo apt-get --yes"
+    alias aptget="sudo apt-get"
 fi
 
 ### applications
