@@ -64,6 +64,11 @@ alias tls="tmux ls"
 alias tat="tmux attach -t"
 alias tns="tmux new -s"
 
+tmux_v() {
+    tmux new-session -s -d "$1" /usr/local/bin/nvim
+    tmux attach -t $1
+}
+
 # git
 alias gl="git log --graph --abbrev-commit --color --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias ga="git add"
