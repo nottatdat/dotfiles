@@ -8,6 +8,7 @@ apath() {
 	  echo "export PATH=\"$new_path:"'$PATH"' >> $HOME/.scripts/paths.sh
 }
 alias epath="nvim $HOME/.scripts/paths.sh"
+alias path="echo -e ${PATH//:/\\n}"
 
 # local binaries storage
 export PATH="$HOME/.local/bin:$PATH"
