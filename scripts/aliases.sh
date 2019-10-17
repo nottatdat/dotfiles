@@ -23,6 +23,7 @@ cdwrap() {
 alias win="cdwrap $HOME/src/compete"
 alias new="cdwrap $HOME/src/create"
 alias work="cdwrap $HOME/src/work"
+alias learn="cdwrap $HOME/src/learn"
 
 # personal directories aliases
 alias dat="cdwrap $HOME/src/personal"
