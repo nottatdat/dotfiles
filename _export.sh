@@ -44,6 +44,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     backup_folder $HOME/.config/i3status
     mkdir $HOME/.config/i3status
     symlink i3/i3status_config .config/i3status/config
+
+    sudo cp xorg.conf /etc/X11/xorg.conf
 fi
 
 gpg --import secrets/gpg/gpg.key
