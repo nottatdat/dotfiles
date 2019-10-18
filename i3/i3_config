@@ -40,13 +40,12 @@ exec "xrandr --dpi 158"
 exec "xrandr --output DP-0 --left-of DP-2"
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+x kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec "rofi -combi-modi window,drun -show combi -modi combi"
 
 # application binding
@@ -55,9 +54,7 @@ bindsym --release Print exec "maim -s --format=png /dev/stdout | xclip -selectio
 bindsym $mod+period     exec thunderbird
 bindsym $mod+comma      exec slack
 bindsym $mod+apostrophe exec discord
-
 bindsym $mod+g          exec firefox-trunk
-bindsym $mod+c          exec code
 
 # change focus
 bindsym $mod+m focus left
