@@ -51,8 +51,8 @@ alias cdback="cd $OLDPWD"
 alias c="clear"
 alias wget="wget -c "
 alias chksum="shasum -a 256 "
-alias now="date +'%T'"
-alias nowdate="date +'%d-%m-%Y'"
+alias now='date +"%T"'
+alias nowdate='date +"%d-%m-%Y"'
 
 ## network related
 alias www="python -m SimpleHTTPServer 8000"
@@ -99,9 +99,9 @@ alias pscpu10="ps auxf | sort -nr -k 3 | head -10"
 alias playavi="mplayer *.avi"
 
 # play all music files from the current directory
-alias playwave="for i in *.wav; do mplayer '$i'; done"
-alias playogg="for i in *.ogg; do mplayer '$i'; done"
-alias playmp3="for i in *.mp3; do mplayer '$i'; done"
+alias playwave='for i in *.wav; do mplayer "$i"; done'
+alias playogg='for i in *.ogg; do mplayer "$i"; done'
+alias playmp3='for i in *.mp3; do mplayer "$i"; done'
 
 # shuffle mp3/ogg etc by default #
 alias music="mplayer --shuffle *"
