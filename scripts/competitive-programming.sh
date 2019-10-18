@@ -2,7 +2,10 @@ export CP_DIR="$HOME/src/compete/competitive-programming/"
 
 alias pi="cd $CP_DIR && cd"
 alias open_stack="ulimit -s unlimited"
-alias now="gdate +%s.%N"
+
+nano_now() {
+    return '$(python -c "import time; print(repr(time.time()))")'
+}
 
 cp_new() {
     cp "$HOME/.scripts/competitive-programming.cpp" "$1"
@@ -33,35 +36,39 @@ get_failure_message() {
 
 is_cppcheck_correct() {
     cppcheck "$1" > /dev/null
-    if [ $? -ne 0 ]; then 
-        return get_failure_message 
+    if [ $? -ne 0 ]; then
+        return get_failure_message
     fi
     return get_success_message
 }
 
 is_gcc_compilable() {
     cp_compile "$1" a
-    if [ $? -ne 0 ]; then 
-        return get_failure_message 
+    if [ $? -ne 0 ]; then
+        return get_failure_message
     fi
     return get_success_message
 }
 
 is_submitable() {
-    if (( $# != 2 )) ; then 
+    if (( $# != 2 )) ; then
         return
     fi
-    
+
     announce "$1" "$2"
-    return [ is_cppcheck_correct "$2" ] && [ is_gcc_compilable "$2" ]
+
+    cpp_correct = is_cppcheck_correct "$2"
+    gcc_compilable = is_gcc_compilable "$2"
+
+    return cpp_correct && gcc_compilable
 }
 
 generate_test() {
-    if (( $# != 2 )) ; then 
-        return 
+    if (( $# != 2 )) ; then
+        return
     fi
-    
-    for i in `seq -w $1 $2`; do 
+
+    for i in `seq -w $1 $2`; do
         ./c.out >> $i.in
     done
 }
@@ -69,13 +76,13 @@ generate_test() {
 evaluate_solution() {
     tested=0; passed=0
     for i in *.in; do
-        local start=$(now)
+        local start=$(nano_now)
         ./a.out < $i >> ${i%in}re
-        local end=$(now)
+        local end=$(nano_now)
         run_time=$(echo "${end} - ${start}" | bc)
 
-        if [ ! -f /b.out ]; then 
-            ./b.out < $i >> ${i%in}ok 
+        if [ ! -f /b.out ]; then
+            ./b.out < $i >> ${i%in}ok
         fi
 
         diff -u ${i%in}re ${i%in}ok > /dev/null
@@ -100,21 +107,21 @@ cp_check() {
     fi
 
     is_submitable "Default solution" "$1"
-    if [ $? -ne 0 ]; then 
-        return 
+    if [ $? -ne 0 ]; then
+        return
     fi
 
     if (( $# >= 2 )); then
         is_submitable "Default solution" "$2"
-        if [ $? -ne 0 ]; then 
+        if [ $? -ne 0 ]; then
             return
         fi
     fi
 
     if (( $# >= 3 )); then
         is_submitable "Test generator" "$3"
-        if [ $? -ne 0 ]; then 
-            return 
+        if [ $? -ne 0 ]; then
+            return
         fi
 
         generate_test $4 $5
