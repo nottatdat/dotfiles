@@ -63,20 +63,19 @@ alias fastping="ping -c 100 -s.2"
 alias ports="netstat -tulanp"
 
 ## add safety nets
-# do not delete / or prompt if deleting more than 3 files at a time
-alias rm='rm -I --preserve-root'
-
-# confirmation
+alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
 
-# Parenting changing perms on /
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
+# Parenting changing perms on /, but only available on Linux
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    alias chown='chown --preserve-root'
+    alias chmod='chmod --preserve-root'
+    alias chgrp='chgrp --preserve-root'
+fi
 
-# reboot / halt / poweroff
+## reboot / halt / poweroff
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
 alias halt='sudo /sbin/halt'
