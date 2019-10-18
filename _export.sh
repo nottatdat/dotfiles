@@ -21,8 +21,9 @@ backup_file $HOME/.tmux.conf
 backup_folder $HOME/.scripts
 backup_folder $HOME/.keys
 backup_folder $HOME/.ssh
-backup_folder $HOME/.config/alacritty
 backup_folder $HOME/.config/nvim
+backup_folder $HOME/.config/coc
+backup_folder $HOME/.config/alacritty
 
 # create symbolic links
 symlink zshrc                .zshrc
@@ -30,11 +31,12 @@ symlink git/gitconfig        .gitconfig
 symlink git/gitignore_global .gitignore_global
 symlink tmux.conf            .tmux.conf
 
-symlink scripts      .scripts
-symlink secrets/ssh  .ssh
-symlink secrets/keys .keys
-symlink nvim         .config/nvim
-symlink alacritty    .config/alacritty
+symlink scripts      .
+symlink secrets/ssh  .
+symlink secrets/keys .
+symlink nvim         .config/
+symlink nvim/coc     .config/
+symlink alacritty    .config/
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     backup_folder $HOME/.config/i3
