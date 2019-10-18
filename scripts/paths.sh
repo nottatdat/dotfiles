@@ -18,6 +18,9 @@ export PATH="$HOME/bin:$PATH"
 export GOPATH="$HOME/.go"
 export PATH="$GOPATH/bin:$PATH"
 
+# set paths for opam for OCaml language
+test -r /Users/dat/.opam/opam-init/init.zsh && . /Users/dat/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
 # set paths for CUDA binaries
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export CUDA_HOME="/usr/local/cuda"
