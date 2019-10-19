@@ -16,6 +16,7 @@ symlink() {
 backup_file $HOME/.zshrc
 backup_file $HOME/.gitconfig
 backup_file $HOME/.gitignore_global
+backup_file $HOME/.git-credentials
 backup_file $HOME/.tmux.conf
 
 backup_folder $HOME/.scripts
@@ -29,6 +30,7 @@ backup_folder $HOME/.config/alacritty
 symlink zshrc                .zshrc
 symlink git/gitconfig        .gitconfig
 symlink git/gitignore_global .gitignore_global
+symlink git/git-credentials  .git-credentials
 symlink tmux.conf            .tmux.conf
 
 symlink scripts      .scripts
