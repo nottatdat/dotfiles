@@ -31,9 +31,9 @@ symlink git/gitconfig        .gitconfig
 symlink git/gitignore_global .gitignore_global
 symlink tmux.conf            .tmux.conf
 
-symlink scripts      .
-symlink secrets/ssh  .
-symlink secrets/keys .
+symlink scripts      .scripts
+symlink secrets/ssh  .ssh
+symlink secrets/keys .keys
 symlink nvim         .config/
 symlink nvim/coc     .config/
 symlink alacritty    .config/
