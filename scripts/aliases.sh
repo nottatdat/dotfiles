@@ -39,10 +39,19 @@ alias euler="gym euler"
 ## open-source contribute directories aliases
 alias con="cdwrap $HOME/src/contribute"
 alias ml="con machine-learning"
-alias lang="con languages"
 alias tool="con tools"
 alias dist="con distributed-systems"
 
+## databases directories
+alias db="con databases"
+alias redis="db redis"
+alias pg="db postgres"
+
+## programming languages directories
+alias lang="con languages"
+alias rust="lang rust"
+alias py="lang python"
+alias hask="lang haskell"
 
 ### OS
 ## usual commands
@@ -131,6 +140,7 @@ tmux_v() {
 
 ## git
 alias gl="git log --graph --abbrev-commit --color --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias clone="git clone --recursive"
 
 alias ga="git add"
 alias gaa="git add -A"
