@@ -1,2 +1,3 @@
 # Remove private keys
 secrets/*
+git/git-credentials
