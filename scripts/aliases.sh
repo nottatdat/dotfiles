@@ -144,11 +144,18 @@ tmux_v() {
 }
 
 ## git
-clone() {
+gclone() {
     if (( $# == 1 )); then
         git clone --recursive $1
     elif (( $# == 2 )); then
         git clone --recursive "https://github.com/$1/$2"
+    fi
+}
+gremote() {
+    if (( $# == 2 )); then
+        git remote add $1 $2
+    elif (( $# == 3 )); then
+        git remote add $1 "https://github.com/$2/$3"
     fi
 }
 
@@ -163,6 +170,9 @@ alias gc="git commit -m"
 alias gca="git commit -am"
 
 alias gpo="git push origin"
+
+alias pullo="git pull origin"
+alias pullu="git pull upstream"
 
 alias gcb="git checkout -b"
 alias gcm="git checkout master"
