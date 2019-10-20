@@ -72,16 +72,14 @@ alias fastping="ping -c 100 -s.2"
 alias ports="netstat -tulanp"
 
 ## add safety nets
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+
 if [[ "$OSTYPE" == "darwin" ]]; then
     alias rm='rm -i'
-    alias mv='mv -i'
-    alias cp='cp -i'
-    alias ln='ln -i'
 elif [[ "$OSTYPE" == "linux-gnu" ]] then
     alias rm='rm -I'
-    alias mv='mv -I'
-    alias cp='cp -I'
-    alias ln='ln -I'
 fi
 
 # Parenting changing perms on /, but only available on Linux
@@ -146,8 +144,15 @@ tmux_v() {
 }
 
 ## git
+clone() {
+    if (( $# == 1 )); then
+        git clone --recursive $1
+    elif (( $# == 2 )); then
+        git clone --recursive "https://github.com/$1/$2"
+    fi
+}
+
 alias gl="git log --graph --abbrev-commit --color --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias clone="git clone --recursive"
 
 alias ga="git add"
 alias gaa="git add -A"
