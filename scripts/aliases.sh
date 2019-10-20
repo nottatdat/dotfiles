@@ -63,10 +63,17 @@ alias fastping="ping -c 100 -s.2"
 alias ports="netstat -tulanp"
 
 ## add safety nets
-alias rm='rm -i'
-alias mv='mv -i'
-alias cp='cp -i'
-alias ln='ln -i'
+if [[ "$OSTYPE" == "darwin" ]]; then
+    alias rm='rm -i'
+    alias mv='mv -i'
+    alias cp='cp -i'
+    alias ln='ln -i'
+elif [[ "$OSTYPE" == "linux-gnu" ]] then
+    alias rm='rm -I'
+    alias mv='mv -I'
+    alias cp='cp -I'
+    alias ln='ln -I'
+fi
 
 # Parenting changing perms on /, but only available on Linux
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
