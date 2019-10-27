@@ -38,16 +38,26 @@ alias euler="gym euler"
 
 ## open-source contribute directories aliases
 alias con="cdwrap $HOME/src/contribute"
-alias ml="con machine-learning"
 alias tool="con tools"
 alias dist="con distributed-systems"
 
-## databases directories
+### machine learning directories
+alias ml="con machine-learning"
+alias audio="ml audio"
+alias boost="ml boost"
+alias cv="ml cv"
+alias dl="ml dl-systems"
+alias mlml="ml general"
+alias nlp="ml nlp"
+alias plat="ml platforms"
+alias rl="ml rl"
+
+### databases directories
 alias db="con databases"
 alias redis="db redis"
 alias pg="db postgres"
 
-## programming languages directories
+### programming languages directories
 alias lang="con languages"
 alias rust="lang rust"
 alias py="lang python"
