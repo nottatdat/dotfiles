@@ -10,6 +10,9 @@ apath() {
 alias epath="nvim $HOME/.scripts/paths.sh"
 alias path="echo -e ${PATH//:/\\n}"
 
+# macports
+export PATH="/opt/local/bin:$PATH"
+
 # local binaries storage
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
