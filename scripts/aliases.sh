@@ -49,6 +49,7 @@ alias cv="ml cv"
 alias dl="ml dl-systems"
 alias mlml="ml general"
 alias nlp="ml nlp"
+alias opt="ml optimizations"
 alias plat="ml platforms"
 alias rl="ml rl"
 
@@ -184,8 +185,7 @@ alias gpo="git push origin"
 alias pullo="git pull origin"
 alias pullu="git pull upstream"
 
-alias gcb="git checkout -b"
-alias gcm="git checkout master"
+alias check="git checkout"
 
 alias gsa="git stash"
 alias gsp="git stash pop"
@@ -199,4 +199,3 @@ alias ls="lsd"
 alias l="ls -l"
 alias la="l -a"
 alias lt="ls --tree"
-
