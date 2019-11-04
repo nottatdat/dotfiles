@@ -18,18 +18,24 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     source $HOME/.scripts/domain_ip_update.sh
 fi
 
+degrade() {
+    mkdir _
+    mv $1 _/
+    mv _ $1
+}
+
 backup() {
     cp $1 $1.backup
 }
 
 cache() {
     file_name=$1
-    mv "$1" ~/cache
+    mv $1 ~/cache
 }
 
 queue() {
     file_name=$1
-    cp "$1" ~/doc/queue
+    cp $1 ~/doc/queue
 }
 
 extract () {
