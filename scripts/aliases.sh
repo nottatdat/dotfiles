@@ -25,6 +25,9 @@ alias new="cdwrap $HOME/src/create"
 alias work="cdwrap $HOME/src/work"
 alias learn="cdwrap $HOME/src/learn"
 
+## textbook directories aliases
+alias book="cdwrap $HOME/doc/Textbooks"
+
 ## personal directories aliases
 alias dat="cdwrap $HOME/src/personal"
 alias blog="dat blog"
@@ -51,6 +54,7 @@ alias mlml="ml general"
 alias nlp="ml nlp"
 alias opt="ml optimizations"
 alias plat="ml platforms"
+alias prob="ml prob-prog"
 alias rl="ml rl"
 
 ### databases directories
@@ -62,7 +66,7 @@ alias pg="db postgres"
 alias lang="con languages"
 alias rust="lang rust"
 alias py="lang python"
-alias hask="lang haskell"
+alias hs="lang haskell"
 
 ### OS
 ## usual commands
