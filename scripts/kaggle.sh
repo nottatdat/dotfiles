@@ -1,4 +1,4 @@
-export DATA_DIR="$HOME/resources/datasets"
+export DATA_DIR="$HOME/data"
 
 kaggle_download() {
     mkdir -p $DATA_DIR/"$1"
