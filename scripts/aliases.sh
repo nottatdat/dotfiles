@@ -20,27 +20,28 @@ cdwrap() {
 }
 
 ### directories aliases
-alias win="cdwrap $HOME/src/compete"
-alias new="cdwrap $HOME/src/create"
-alias work="cdwrap $HOME/src/work"
-alias learn="cdwrap $HOME/src/learn"
+alias src="cdwrap $HOME/src"
+alias win="src compete"
+alias new="src create"
+alias work="src work"
+alias learn="src learn"
+alias con="src contribute"
+alias dat="src personal"
+alias gym="src train"
 
 ## textbook directories aliases
 alias book="cdwrap $HOME/doc/Textbooks"
 
 ## personal directories aliases
-alias dat="cdwrap $HOME/src/personal"
 alias blog="dat blog"
 alias dot="dat dotfiles"
 alias note="dat notes"
 
 ## training directories aliases
-alias gym="cdwrap $HOME/src/train"
 alias leet="gym leetcode"
 alias euler="gym euler"
 
 ## open-source contribute directories aliases
-alias con="cdwrap $HOME/src/contribute"
 alias tool="con tools"
 alias dist="con distributed-systems"
 
