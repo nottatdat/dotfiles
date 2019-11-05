@@ -1,3 +1,6 @@
+[submodule "neovim"]
+	path = neovim
+	url = https://github.com/tataudat/neovim-config
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/tataudat/neovim-config
