@@ -102,9 +102,13 @@ gclone() {
     fi
 }
 sclone() {
-    if (( $# == 2 )); then
+    if (( $# == 1 )); then
+        repo_name=${1##*/}
         gclone $1
-        git submodule add $1 $2
+        git submodule add $1 $repo_name
+    elif (( $# == 2 )); then
+        gclone $1 $2
+        git submodule add "https://github.com/$1/$2" $2
     fi
 }
 gremote() {
