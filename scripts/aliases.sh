@@ -7,6 +7,7 @@ alias learn="src learn"
 alias con="src contribute"
 alias dat="src personal"
 alias gym="src train"
+alias toy="src toy"
 
 ## textbook directories aliases
 alias book="cdwrap $HOME/doc/Textbooks"
