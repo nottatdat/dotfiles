@@ -18,6 +18,34 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     source $HOME/.scripts/domain_ip_update.sh
 fi
 
+# nvim and tmux
+tmux_v() {
+    tmux new-session -s -d "$1" /usr/local/bin/nvim
+    tmux attach -t $1
+}
+
+# helper function for cd command
+cdforward() {
+    for var in "$@"; do
+        if [ -d $var ]; then
+            cd $var
+        else
+            echo "Folder $var does not exist in $(pwd)"
+            return 1
+        fi
+    done
+    return 0
+}
+
+cdwrap() {
+    if (( $# >= 1 )); then
+        cdforward $@; return $?
+    else
+        cd $HOME; return 0
+    fi
+}
+
+# files/folders utilities
 degrade() {
     mkdir _
     mv $1 _/
@@ -38,7 +66,12 @@ queue() {
     cp $1 ~/doc/queue
 }
 
-extract () {
+# archiver utilities
+compress() {
+    tar -cvzf $1.tgz $1
+}
+
+extract() {
     if [ -f $1 ] ; then
         case $1 in
             *.tar.bz2)   tar xvjf $1    ;;
@@ -60,7 +93,30 @@ extract () {
     fi
 }
 
-djvu2pdf() {
+# git utilities
+gclone() {
+    if (( $# == 1 )); then
+        git clone --recursive $1
+    elif (( $# == 2 )); then
+        git clone --recursive "https://github.com/$1/$2"
+    fi
+}
+sclone() {
+    if (( $# == 2 )); then
+        gclone $1
+        git submodule add $1 $2
+    fi
+}
+gremote() {
+    if (( $# == 2 )); then
+        git remote add $1 $2
+    elif (( $# == 3 )); then
+        git remote add $1 "https://github.com/$2/$3"
+    fi
+}
+
+# doc utilities
+all2pdf() {
     find . -type f -name "*.ps" -execdir ps2pdf {} \; -execdir rm {} \;
     find . -type f -name "*.djvu" -execdir djvu2pdf {} \; -execdir rm {} \;
 }

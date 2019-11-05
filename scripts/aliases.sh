@@ -1,24 +1,3 @@
-# helper function for cd command
-cdforward() {
-    for var in "$@"; do
-        if [ -d $var ]; then
-            cd $var
-        else
-            echo "Folder $var does not exist in $(pwd)"
-            return 1
-        fi
-    done
-    return 0
-}
-
-cdwrap() {
-    if (( $# >= 1 )); then
-        cdforward $@; return $?
-    else
-        cd $HOME; return 0
-    fi
-}
-
 ### directories aliases
 alias src="cdwrap $HOME/src"
 alias win="src compete"
@@ -154,47 +133,17 @@ alias tls="tmux ls"
 alias tat="tmux attach -t"
 alias tns="tmux new -s"
 
-tmux_v() {
-    tmux new-session -s -d "$1" /usr/local/bin/nvim
-    tmux attach -t $1
-}
-
 ## git
-gclone() {
-    if (( $# == 1 )); then
-        git clone --recursive $1
-    elif (( $# == 2 )); then
-        git clone --recursive "https://github.com/$1/$2"
-    fi
-}
-gremote() {
-    if (( $# == 2 )); then
-        git remote add $1 $2
-    elif (( $# == 3 )); then
-        git remote add $1 "https://github.com/$2/$3"
-    fi
-}
-
 alias gl="git log --graph --abbrev-commit --color --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-
 alias ga="git add"
 alias gaa="git add -A"
-
 alias gs="git status"
-
 alias gc="git commit -m"
 alias gca="git commit -am"
-
 alias gpo="git push origin"
-
 alias pullo="git pull origin"
 alias pullu="git pull upstream"
-
 alias check="git checkout"
-
-alias gsa="git stash"
-alias gsp="git stash pop"
-
 alias gnew="git clean -n -d"
 alias gclean="git clean -f -d"
 alias gpurge="git clean -x -d -f"
