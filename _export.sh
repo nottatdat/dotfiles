@@ -59,5 +59,4 @@ elif [[ "$OSTYPE" == "darwin" ]]; then
 
 fi
 
-gpg --import secrets/gpg/gpg.key
-
+gpg --export-secret-key -a $GPG_UID > secrets/gpg/gpg.key
