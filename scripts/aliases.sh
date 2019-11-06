@@ -1,21 +1,22 @@
 ### directories aliases
 alias src="cdwrap $HOME/src"
 alias win="src compete"
-alias new="src create"
-alias work="src work"
-alias learn="src learn"
 alias con="src contribute"
+alias new="src create"
+alias learn="src learn"
 alias dat="src personal"
-alias gym="src train"
 alias toy="src toy"
+alias gym="src train"
+alias work="src work"
 
 ## textbook directories aliases
 alias book="cdwrap $HOME/doc/Textbooks"
 
 ## personal directories aliases
 alias blog="dat blog"
-alias dot="dat dotfiles"
 alias note="dat notes"
+alias dot="dat dotfiles"
+alias dotvim="dot nvim"
 
 ## training directories aliases
 alias leet="gym leetcode"
@@ -40,37 +41,49 @@ alias rl="ml rl"
 
 ### databases directories
 alias db="con databases"
-alias redis="db redis"
 alias pg="db postgres"
+alias msql="db mysql-5.6"
+alias redis="db redis"
+alias noria="db noria"
 
 ### programming languages directories
 alias lang="con languages"
-alias rust="lang rust"
+alias rs="lang rustlang"
+alias cp="lang cpp"
 alias py="lang python"
 alias hs="lang haskell"
+alias jl="lang julia"
+alias oml="lang ocaml"
+
+### scientic computing directories
+alias sc="con scientic-computing"
+alias gpu="sc gpu-computing"
+alias grad="sc autograd-engine"
+alias jit="sc jit"
+alias scsc="sc general"
 
 ### OS
 ## usual commands
-alias hs="history | grep"
-alias cdback="cd $OLDPWD"
 alias c="clear"
-alias wget="wget -c "
+alias cdback="cd $OLDPWD"
 alias chksum="shasum -a 256 "
+alias hs="history | grep"
 alias now='date +"%T"'
 alias nowdate='date +"%d-%m-%Y"'
+alias wget="wget -c "
 
 ## network related
-alias www="python -m SimpleHTTPServer 8000"
-alias speed="speedtest-cli --server 2406 --simple"
+alias fastping="ping -c 100 -s.2"
 alias ip="curl ipinfo.io/ip"
 alias ping="ping -c 5"
-alias fastping="ping -c 100 -s.2"
 alias ports="netstat -tulanp"
+alias speed="speedtest-cli --server 2406 --simple"
+alias www="python -m SimpleHTTPServer 8000"
 
 ## add safety nets
-alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
+alias mv='mv -i'
 
 if [[ "$OSTYPE" == "darwin" ]]; then
     alias rm='rm -i'
@@ -80,15 +93,15 @@ fi
 
 # Parenting changing perms on /, but only available on Linux
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    alias chown='chown --preserve-root'
-    alias chmod='chmod --preserve-root'
     alias chgrp='chgrp --preserve-root'
+    alias chmod='chmod --preserve-root'
+    alias chown='chown --preserve-root'
 fi
 
 ## reboot / halt / poweroff
-alias reboot='sudo /sbin/reboot'
-alias poweroff='sudo /sbin/poweroff'
 alias halt='sudo /sbin/halt'
+alias poweroff='sudo /sbin/poweroff'
+alias reboot='sudo /sbin/reboot'
 alias shutdown='sudo /sbin/shutdown'
 
 ## system statistics
@@ -108,46 +121,48 @@ alias pscpu10="ps auxf | sort -nr -k 3 | head -10"
 alias playavi="mplayer *.avi"
 
 # play all music files from the current directory
-alias playwave='for i in *.wav; do mplayer "$i"; done'
-alias playogg='for i in *.ogg; do mplayer "$i"; done'
 alias playmp3='for i in *.mp3; do mplayer "$i"; done'
+alias playogg='for i in *.ogg; do mplayer "$i"; done'
+alias playwave='for i in *.wav; do mplayer "$i"; done'
 
 # shuffle mp3/ogg etc by default #
 alias music="mplayer --shuffle *"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    # mock MacOS open, pbcopy, pbpaste commands
+    alias open="xdg-open"
     alias pbcopy="xclip -selection clipboard"
     alias pbpaste="xclip -selection clipboard -o"
-    alias open="xdg-open"
 
+    # alias for apt-get
     alias aptget="sudo apt-get"
 fi
 
 ### applications
 alias bc="bc -l"
-alias v="nvim"
-alias grep="rg"
 alias diff="colordiff"
+alias grep="rg"
+alias v="nvim"
 
 ## tmux
-alias tls="tmux ls"
 alias tat="tmux attach -t"
+alias tls="tmux ls"
 alias tns="tmux new -s"
 
 ## git
 alias gl="git log --graph --abbrev-commit --color --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias check="git checkout"
 alias ga="git add"
 alias gaa="git add -A"
-alias gs="git status"
 alias gc="git commit -m"
 alias gca="git commit -am"
+alias gclean="git clean -f -d"
+alias gnew="git clean -n -d"
 alias gpo="git push origin"
+alias gpurge="git clean -x -d -f"
+alias gs="git status"
 alias pullo="git pull origin"
 alias pullu="git pull upstream"
-alias check="git checkout"
-alias gnew="git clean -n -d"
-alias gclean="git clean -f -d"
-alias gpurge="git clean -x -d -f"
 
 ## use lsd as ls alternative
 alias ls="lsd"
