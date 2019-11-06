@@ -49,7 +49,7 @@ alias noria="db noria"
 ### programming languages directories
 alias lang="con languages"
 alias rs="lang rustlang"
-alias cp="lang cpp"
+alias cpp="lang cpp"
 alias py="lang python"
 alias hs="lang haskell"
 alias jl="lang julia"
