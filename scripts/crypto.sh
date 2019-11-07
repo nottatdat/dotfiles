@@ -28,6 +28,7 @@ decrypt() {
 pcat () {
     if (( $# < 1 )); then
         echo "Usage: pcat file"
+        return
     fi
 
     cat "$1" | pbcopy
