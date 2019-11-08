@@ -14,3 +14,4 @@ source ~/.scripts/utils.sh
 source ~/.scripts/paths.sh
 source ~/.scripts/conda.sh
 
+export VISUAL="nvim"
