@@ -119,6 +119,33 @@ gremote() {
     fi
 }
 
+# ip utilities
+get_ip() {
+    if (( $# != 1 )); then
+        echo "Usage: get_ip <your website>"
+        return 1
+    fi
+
+    echo $(dig +short $1)
+}
+
+get_server_ip() {
+    echo $(get_ip ssh.tatd.at)
+}
+
+get_my_ip() {
+    echo $(curl -s "https://ipinfo.io/ip" | tr -d "\n")
+}
+
+# ssh utilities
+me() {
+    if [ $(get_server_ip) = $(get_my_ip) ]; then
+        ssh me.local
+    else
+        ssh me
+    fi
+}
+
 # doc utilities
 all2pdf() {
     find . -type f -name "*.ps" -execdir ps2pdf {} \; -execdir rm {} \;
