@@ -56,7 +56,7 @@ alias jl="lang julia"
 alias oml="lang ocaml"
 
 ### scientic computing directories
-alias sc="con scientic-computing"
+alias sc="con scientific-computing"
 alias gpu="sc gpu-computing"
 alias grad="sc autograd-engine"
 alias jit="sc jit"
