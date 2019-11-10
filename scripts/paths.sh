@@ -10,9 +10,6 @@ apath() {
 alias epath="nvim $HOME/.scripts/paths.sh"
 alias path="echo -e ${PATH//:/\\n}"
 
-# macports
-export PATH="/opt/local/bin:$PATH"
-
 # local binaries storage
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
@@ -20,18 +17,30 @@ export PATH="$HOME/bin:$PATH"
 # set paths for anaconda
 source $HOME/.scripts/conda.sh
 
-# set paths for go language
-export GOPATH="$HOME/.go"
-export PATH="$GOPATH/bin:$PATH"
-
-# set paths for opam for OCaml language
-test -r /Users/dat/.opam/opam-init/init.zsh && . /Users/dat/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
 # set paths for CUDA binaries
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export CUDA_HOME="/usr/local/cuda"
     export PATH="/usr/local/cuda/bin:$PATH"
 fi
+
+# set paths for go language
+export GOPATH="$HOME/.go"
+export PATH="$GOPATH/bin:$PATH"
+
+# set paths for llvm
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export PATH="/usr/local/opt/llvm/bin:$PATH"
+    export LDFLAGS="-L/usr/local/opt/llvm/lib"
+    export CPPFLAGS="-I/usr/local/opt/llvm/include"
+fi
+
+# set paths for macports
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export PATH="/opt/local/bin:$PATH"
+fi
+
+# set paths for OCaml language
+test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # set paths for TensorFlow for Swift
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -43,11 +52,6 @@ fi
 # set paths for ghcup
 source $HOME/.ghcup/env
 
-# set paths for llvm
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
-
 # set paths for vcpkg
-export PATH="/home/titan/src/contribute/tools/vcpkg:$PATH"
+export PATH="$HOME/src/contribute/tools/vcpkg:$PATH"
 alias cmake_vcpkg="cmake -DCMAKE_TOOLCHAIN_FILE=/home/titan/resources/src/contribute/tools/vcpkg/scripts/buildsystems/vcpkg.cmake"
