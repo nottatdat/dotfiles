@@ -17,6 +17,9 @@ export PATH="/opt/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
+# set paths for anaconda
+source $HOME/.scripts/conda.sh
+
 # set paths for go language
 export GOPATH="$HOME/.go"
 export PATH="$GOPATH/bin:$PATH"
@@ -39,6 +42,11 @@ fi
 
 # set paths for ghcup
 source $HOME/.ghcup/env
+
+# set paths for llvm
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
 # set paths for vcpkg
 export PATH="/home/titan/src/contribute/tools/vcpkg:$PATH"
