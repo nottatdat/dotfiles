@@ -34,6 +34,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export CPPFLAGS="-I/usr/local/opt/llvm/include"
 fi
 
+# set paths for linux brew
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+fi
+
 # set paths for macports
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/local/bin:$PATH"
