@@ -134,7 +134,7 @@ get_server_ip() {
 }
 
 get_my_ip() {
-    echo $(curl -s "https://ipinfo.io/ip" | tr -d "\n")
+    echo $(dig +short myip.opendns.com @resolver1.opendns.com)
 }
 
 # ssh utilities
