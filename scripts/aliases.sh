@@ -74,7 +74,6 @@ alias wget="wget -c "
 
 ## network related
 alias fastping="ping -c 100 -s.2"
-alias ip="curl ipinfo.io/ip"
 alias ping="ping -c 5"
 alias ports="netstat -tulanp"
 alias speed="speedtest-cli --server 2406 --simple"
