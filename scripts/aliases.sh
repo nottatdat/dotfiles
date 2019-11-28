@@ -1,4 +1,5 @@
 ### directories aliases
+## src directories alias
 alias src="cdwrap $HOME/src"
 alias win="src compete"
 alias con="src contribute"
@@ -9,8 +10,9 @@ alias toy="src toy"
 alias gym="src train"
 alias work="src work"
 
-## textbook directories aliases
-alias book="cdwrap $HOME/doc/Textbooks"
+## doc directories aliases
+alias doc="cdwrap $HOME/doc"
+alias book="doc Textbooks"
 
 ## personal directories aliases
 alias blog="dat blog"
@@ -23,8 +25,10 @@ alias leet="gym leetcode"
 alias euler="gym euler"
 
 ## open-source contribute directories aliases
-alias tool="con tools"
 alias dist="con distributed-systems"
+alias dt="con data"
+alias tool="con tools"
+alias os="con os"
 
 ### machine learning directories
 alias ml="con machine-learning"
