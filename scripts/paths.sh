@@ -57,9 +57,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/Library/Developer/Toolchains/swift-latest/usr/bin:$PATH"
 fi
 
-# set paths for ghcup
-source $HOME/.ghcup/env
-
 # set paths for vcpkg
 export PATH="$HOME/src/contribute/tools/vcpkg:$PATH"
 alias cmake_vcpkg="cmake -DCMAKE_TOOLCHAIN_FILE=/home/titan/resources/src/contribute/tools/vcpkg/scripts/buildsystems/vcpkg.cmake"
