@@ -14,11 +14,13 @@ alias work="src work"
 alias doc="cdwrap $HOME/doc"
 alias book="doc Textbooks"
 
+## dotfiles directories
+alias dot="cd $HOME/dotfiles"
+alias dotvim="dot nvim"
+
 ## personal directories aliases
 alias blog="dat blog"
 alias note="dat notes"
-alias dot="dat dotfiles"
-alias dotvim="dot nvim"
 
 ## training directories aliases
 alias leet="gym leetcode"
