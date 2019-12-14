@@ -40,7 +40,6 @@ symlink nvim         .config/
 symlink nvim/coc     .config/
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-
     symlink alacritty/alacritty.linux.yml .config/alacritty/alacritty.yml
 
     backup_folder $HOME/.config/i3
@@ -52,11 +51,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     symlink i3/i3status_config .config/i3status/config
 
     sudo cp xorg.conf /etc/X11/xorg.conf
-
 elif [[ "$OSTYPE" == "darwin" ]]; then
-
     symlink alacritty/alacritty.yml .config/alacritty/alacritty.yml
-
 fi
 
 gpg --export-secret-key -a $GPG_UID > secrets/gpg/gpg.key
