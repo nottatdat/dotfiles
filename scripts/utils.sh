@@ -140,9 +140,9 @@ get_my_ip() {
 # ssh utilities
 me() {
     if [ $(get_server_ip) = $(get_my_ip) ]; then
-        ssh me.local
+        mosh me.local
     else
-        ssh me
+        mosh me
     fi
 }
 
