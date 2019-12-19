@@ -147,7 +147,7 @@ fi
 alias bc="bc -l"
 alias diff="colordiff"
 alias grep="rg"
-alias v="nvim"
+alias v="$HOME/.local/bin/nvim"
 
 ## tmux
 alias tat="tmux attach -t"

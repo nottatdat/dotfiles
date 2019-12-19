@@ -3,7 +3,7 @@
 	email = me@tatd.at
 [core]
 	excludesfile = /Users/dat/.gitignore_global
-	editor = /usr/local/bin/nvim
+	editor = $HOME/.local/bin/nvim
     pager = delta --light
 [credential]
 	helper = store
