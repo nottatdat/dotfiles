@@ -11,8 +11,8 @@ source ~/.keys/keys.sh
 
 source ~/.scripts/aliases.sh
 source ~/.scripts/competitive-programming.sh
-source ~/.scripts/crypto.sh
-source ~/.scripts/utils.sh
-source ~/.scripts/paths.sh
 source ~/.scripts/conda.sh
+source ~/.scripts/crypto.sh
 source ~/.scripts/fuzzy_history.sh
+source ~/.scripts/paths.sh
+source ~/.scripts/utils.sh
