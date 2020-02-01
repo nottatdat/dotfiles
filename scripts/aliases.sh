@@ -170,7 +170,6 @@ alias pullo="git pull origin"
 alias pullu="git pull upstream"
 
 ## use lsd as ls alternative
-alias ls="lsd --color never"
 alias l="ls -l"
 alias la="l -a"
 alias lt="ls --tree"
