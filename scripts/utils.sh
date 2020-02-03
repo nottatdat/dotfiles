@@ -119,6 +119,10 @@ gremote() {
     fi
 }
 
+# temperature utilities
+alias temp_cpu='watch "sensors | rg -A 4 k10temp-pci"'
+alias temp_gpu='watch nvidia-smi'
+
 # ip utilities
 get_ip() {
     if (( $# != 1 )); then
