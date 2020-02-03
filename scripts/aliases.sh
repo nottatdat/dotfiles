@@ -1,6 +1,8 @@
 ### directories aliases
 ## src directories alias
 alias src="cdwrap $HOME/src"
+alias update_src="bash $HOME/src/update.sh"
+
 alias win="src compete"
 alias con="src contribute"
 alias new="src create"
@@ -162,6 +164,7 @@ alias gaa="git add -A"
 alias gc="git commit -m"
 alias gca="git commit -am"
 alias gclean="git clean -f -d"
+alias gd="git diff"
 alias gnew="git clean -n -d"
 alias gpo="git push origin"
 alias gpurge="git clean -x -d -f"
