@@ -149,7 +149,10 @@ fi
 alias bc="bc -l"
 alias diff="colordiff"
 alias grep="rg"
+
+## neovim
 alias v="$HOME/.local/bin/nvim"
+alias update_v="bash $HOME/.scripts/update_neovim_nightly.sh"
 
 ## tmux
 alias tat="tmux attach -t"
