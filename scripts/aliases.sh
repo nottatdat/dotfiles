@@ -152,7 +152,7 @@ alias grep="rg"
 
 ## neovim
 alias v="$HOME/.local/bin/nvim"
-alias update_v="bash $HOME/.scripts/update_neovim_nightly.sh"
+alias update_v="bash $HOME/.config/nvim/update_neovim_nightly.sh"
 
 ## tmux
 alias tat="tmux attach -t"
