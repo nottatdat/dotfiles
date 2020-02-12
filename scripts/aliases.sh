@@ -17,7 +17,7 @@ alias doc="cdwrap $HOME/doc"
 alias book="doc Textbooks"
 
 ## dotfiles directories
-alias dot="cd $HOME/dotfiles"
+alias dot="cdwrap $HOME/dotfiles"
 alias dotvim="dot nvim"
 
 ## personal directories aliases
@@ -29,10 +29,11 @@ alias leet="gym leetcode"
 alias euler="gym euler"
 
 ## open-source contribute directories aliases
+alias comp="con compilers"
+alias data="con data"
 alias dist="con distributed-systems"
-alias dt="con data"
-alias tool="con tools"
 alias os="con os"
+alias tool="con tools"
 
 ### machine learning directories
 alias ml="con machine-learning"
@@ -160,7 +161,15 @@ alias tls="tmux ls"
 alias tns="tmux new -s"
 
 ## git
-alias gl="git log --graph --abbrev-commit --color --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias gl="
+    git log --graph --abbrev-commit --color --decorate --date=relative \
+    --format=format:'
+%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) \
+%C(white)%s%C(reset) \
+%C(dim white) - %an%C(reset)%C(bold yellow)%d%C(reset) \
+    ' \
+    --all
+"
 alias check="git checkout"
 alias ga="git add"
 alias gaa="git add -A"
