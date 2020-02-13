@@ -161,7 +161,7 @@ alias tls="tmux ls"
 alias tns="tmux new -s"
 
 ## git
-alias gl="
+alias glog="
     git log --graph --abbrev-commit --color --decorate --date=relative \
     --format=format:'
 %C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) \
