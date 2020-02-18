@@ -22,7 +22,7 @@ decrypt() {
     file_name=$1
     gpg -d -o "${file_name:0:(-4)}" "${file_name}"
     tar xzvf "${file_name:0:(-4)}"
-    rm "${file_name:0:(-4)}"  # Clean up
+    rm "${file_name}"  # Clean up
 }
 
 pcat () {
