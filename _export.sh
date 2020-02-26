@@ -45,6 +45,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     backup_folder $HOME/.config/i3
     mkdir $HOME/.config/i3
     symlink i3/i3_config .config/i3/config
+    symlink i3/i3_start_up.sh crons/post/i3_start_up.sh
 
     backup_folder $HOME/.config/i3status
     mkdir $HOME/.config/i3status
