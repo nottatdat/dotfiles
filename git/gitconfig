@@ -1,9 +1,9 @@
 [user]
-	name = tataudat
-	email = me@tatd.at
+    name = tataudat
+    email = me@tatd.at
 [core]
-	excludesfile = /Users/dat/.gitignore_global
-	editor = $HOME/.local/bin/nvim
+	excludesfile = /home/dat/.gitignore_global
+    editor = /home/dat/.local/bin/nvim
     pager = delta --light
 [credential]
-	helper = store
+    helper = store
