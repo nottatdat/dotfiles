@@ -28,12 +28,6 @@ exec megasync
 bindsym --release Print exec "maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i"
 bindsym $mod+g exec firefox-trunk
 
-# Shutdown, reboot, lock screen
-exec xautolock -detectsleep \
-  -time 2 -locker "blurlock" \
-  -notify 10 \
-  -notifier "notify-send -t 9000 -- 'LOCKING screen in 10 seconds'"
-
 # change focus
 bindsym $mod+m focus left
 bindsym $mod+w focus up
