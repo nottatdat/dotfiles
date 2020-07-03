@@ -24,8 +24,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 fi
 
 # set paths for go language
-export GOPATH="$HOME/.go"
-export PATH="$GOPATH/bin:$PATH"
+export GOROOT="$HOME/.go"
+export GOPATH="$HOME/.go_workspace"
+export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
 # set paths for llvm
 if [[ "$OSTYPE" == "darwin"* ]]; then
