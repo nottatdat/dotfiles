@@ -1,4 +1,4 @@
-GPG_UID="taurandat"
+GPG_UID="tatdat"
 
 encrypt() {
     if (( $# < 1 )); then
@@ -21,8 +21,9 @@ decrypt() {
 
     file_name=$1
     gpg -d -o "${file_name:0:(-4)}" "${file_name}"
+    rm "${file_name}" # Clean up
     tar xzvf "${file_name:0:(-4)}"
-    rm "${file_name}"  # Clean up
+    rm "${file_name:0:(-4)}" # Clean up
 }
 
 pcat () {
