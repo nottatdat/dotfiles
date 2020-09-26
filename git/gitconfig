@@ -2,7 +2,7 @@
     name = tataudat
     email = me@tatd.at
 [core]
-	excludesfile = /home/dat/.gitignore_global
+    excludesfile = /home/dat/.gitignore_global
     editor = /home/dat/.local/bin/nvim
     pager = delta --light
 [credential]
