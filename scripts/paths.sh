@@ -66,5 +66,5 @@ export PATH="$HOME/src/contribute/tools/vcpkg:$PATH"
 alias cmake_vcpkg="cmake -DCMAKE_TOOLCHAIN_FILE=/home/titan/resources/src/contribute/tools/vcpkg/scripts/buildsystems/vcpkg.cmake"
 
 # tab multiplexer configuration: https://github.com/austinjones/tab-rs/
-source /Users/dat/.tab/completion/zsh-history.zsh
+source $HOME/.tab/completion/zsh-history.zsh
 
