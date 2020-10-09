@@ -68,3 +68,7 @@ alias cmake_vcpkg="cmake -DCMAKE_TOOLCHAIN_FILE=/home/titan/resources/src/contri
 # tab multiplexer configuration: https://github.com/austinjones/tab-rs/
 source $HOME/.tab/completion/zsh-history.zsh
 
+# set paths for neovim
+export EDITOR="$HOME/.local/nvim/bin/nvim"
+export PATH="$HOME/.local/nvim/bin:$PATH"
+
