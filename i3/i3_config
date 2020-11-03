@@ -26,7 +26,8 @@ exec megasync
 
 # application binding
 bindsym --release Print exec "maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i"
-bindsym $mod+g exec firefox-trunk
+bindsym $mod+f exec firefox-trunk
+bindsym $mod+g exec google-chrome
 
 # change focus
 bindsym $mod+m focus left
