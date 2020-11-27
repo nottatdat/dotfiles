@@ -31,7 +31,7 @@ symlink zshrc                .zshrc
 symlink git/gitconfig        .gitconfig
 symlink git/gitignore_global .gitignore_global
 symlink git/git-credentials  .git-credentials
-symlink tmux.conf            .tmux.conf
+symlink tmux/tmux.conf       .tmux.conf
 
 symlink scripts      .scripts
 symlink secrets/ssh  .ssh
@@ -39,6 +39,7 @@ symlink secrets/keys .keys
 symlink nvim         .config/
 symlink nvim/coc     .config/
 
+# handle linux related dotfiles
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     symlink alacritty/alacritty.linux.yml .config/alacritty/alacritty.yml
 
@@ -52,6 +53,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     symlink i3/i3status_config .config/i3status/config
 
     sudo cp xorg.conf /etc/X11/xorg.conf
+# handle OSX related dotfiles
 elif [[ "$OSTYPE" == "darwin" ]]; then
     symlink alacritty/alacritty.yml .config/alacritty/alacritty.yml
 fi
