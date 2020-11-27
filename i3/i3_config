@@ -26,13 +26,12 @@ exec megasync
 
 # application binding
 bindsym --release Print exec "maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i"
-bindsym $mod+f exec firefox-trunk
 bindsym $mod+g exec google-chrome
 
 # change focus
 bindsym $mod+m focus left
-bindsym $mod+w focus up
-bindsym $mod+v focus down
+bindsym $mod+w focus down
+bindsym $mod+v focus up
 bindsym $mod+z focus right
 
 # move focused window
@@ -93,10 +92,12 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window
 mode "resize" {
