@@ -184,7 +184,8 @@ alias gs="git status"
 alias pullo="git pull origin"
 alias pullu="git pull upstream"
 
-## use lsd as ls alternative
+## ls
+alias ls="ls --color=tty --group-directories-first"
 alias l="ls -l"
 alias la="l -a"
 alias lt="ls --tree"
