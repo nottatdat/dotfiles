@@ -185,7 +185,11 @@ alias pullo="git pull origin"
 alias pullu="git pull upstream"
 
 ## ls
-alias ls="ls --color=tty --group-directories-first"
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    alias ls='ls -Fh --color=tty --group-directories-first'
+else
+    alias ls='gls -Fh --color=tty --group-directories-first'
+fi
 alias l="ls -l"
 alias la="l -a"
 alias lt="ls --tree"
