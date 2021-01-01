@@ -148,7 +148,6 @@ fi
 
 ### applications
 alias bc="bc -l"
-alias diff="colordiff"
 alias grep="rg"
 
 ## neovim
