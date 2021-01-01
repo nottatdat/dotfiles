@@ -90,21 +90,21 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: JetBrainsMono Nerd Font
+    family: JetBrains Mono
     style: Regular
 
   # Bold font face
   bold:
-    family: JetBrainsMono Nerd Font
+    family: JetBrains Mono
     style: Bold
 
   # Italic font face
   italic:
-    family: JetBrainsMono Nerd Font
+    family: JetBrains Mono
     style: Italic
 
   # Point size
-    size: 10
+  size: 12
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
