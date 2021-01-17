@@ -45,9 +45,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/local/bin:$PATH"
 fi
 
-# set up Nix
-source $HOME/.nix-profile/etc/profile.d/nix.sh
-
 # set paths for OCaml language
 test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
