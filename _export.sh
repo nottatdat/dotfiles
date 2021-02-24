@@ -5,7 +5,9 @@ backup_file() {
 
 backup_folder() {
     rm -rf $1.bak
-    mv $1 $1.bak
+    if [ -f $1 ]; then
+        mv $1 $1.bak
+    fi
 }
 
 symlink() {
@@ -20,7 +22,7 @@ backup_file $HOME/.git-credentials
 backup_file $HOME/.config/alacritty/alacritty.yml
 backup_file $HOME/.tmux.conf
 
-backup_folder $HOME/.scripts
+backup_folder $HOME/.utils
 backup_folder $HOME/.keys
 backup_folder $HOME/.ssh
 backup_folder $HOME/.config/nvim
@@ -33,7 +35,7 @@ symlink git/gitignore_global .gitignore_global
 symlink git/git-credentials  .git-credentials
 symlink tmux/tmux.conf       .tmux.conf
 
-symlink scripts      .scripts
+symlink utils        .utils
 symlink secrets/ssh  .ssh
 symlink secrets/keys .keys
 symlink nvim         .config/

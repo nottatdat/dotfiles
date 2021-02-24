@@ -8,10 +8,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 source ~/.keys/keys.sh
-source ~/.scripts/aliases.sh
-source ~/.scripts/competitive-programming.sh
-source ~/.scripts/conda.sh
-source ~/.scripts/crypto.sh
-source ~/.scripts/fuzzy_history.sh
-source ~/.scripts/paths.sh
-source ~/.scripts/utils.sh
+source ~/.utils/aliases.sh
+source ~/.utils/competitive-programming.sh
+source ~/.utils/conda.sh
+source ~/.utils/crypto.sh
+source ~/.utils/fuzzy_history.sh
+source ~/.utils/paths.sh
+source ~/.utils/utils.sh
