@@ -5,9 +5,9 @@ apath() {
     new_path="$(pwd)"
 	  if [ $# -eq 1 ]; then new_path=$1 fi
 
-	  echo "export PATH=\"$new_path:"'$PATH"' >> $HOME/.scripts/paths.sh
+	  echo "export PATH=\"$new_path:"'$PATH"' >> $HOME/.utils/paths.sh
 }
-alias epath="nvim $HOME/.scripts/paths.sh"
+alias epath="nvim $HOME/.utils/paths.sh"
 alias path="echo -e ${PATH//:/\\n}"
 
 # local binaries storage
@@ -15,7 +15,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # set paths for anaconda
-source $HOME/.scripts/conda.sh
+source $HOME/.utils/conda.sh
 
 # set paths for CUDA binaries
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -60,11 +60,7 @@ fi
 
 # set paths for vcpkg
 export PATH="$HOME/src/contribute/tools/vcpkg:$PATH"
-alias cmake_vcpkg="cmake -DCMAKE_TOOLCHAIN_FILE=/home/titan/resources/src/contribute/tools/vcpkg/scripts/buildsystems/vcpkg.cmake"
-
-# tab multiplexer configuration: https://github.com/austinjones/tab-rs/
-source $HOME/.tab/completion/zsh-history.zsh
+alias cmake_vcpkg="cmake -DCMAKE_TOOLCHAIN_FILE=/home/titan/resources/src/contribute/tools/vcpkg/utils/buildsystems/vcpkg.cmake"
 
 # set paths for neovim
 export EDITOR="/usr/bin/nvim"
-

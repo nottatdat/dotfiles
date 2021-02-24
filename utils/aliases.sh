@@ -151,7 +151,7 @@ alias bc="bc -l"
 alias grep="rg"
 
 ## neovim
-alias v="$HOME/.local/nvim/bin/nvim"
+alias v="/usr/bin/nvim"
 alias update_v="bash $HOME/.config/nvim/update_neovim_nightly.sh"
 
 ## tmux

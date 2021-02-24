@@ -13,9 +13,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # change keyboard interupted to Ctrl+o
     stty intr ^o
 
-    source $HOME/.scripts/kaggle.sh
-    source $HOME/.scripts/nvidia.sh
-    source $HOME/.scripts/domain_ip_update.sh
+    source $HOME/.utils/kaggle.sh
+    source $HOME/.utils/nvidia.sh
+    source $HOME/.utils/domain_ip_update.sh
 fi
 
 # nvim and tmux
