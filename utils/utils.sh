@@ -101,6 +101,7 @@ gclone() {
         git clone --recursive "https://github.com/$1/$2"
     fi
 }
+
 sclone() {
     if (( $# == 1 )); then
         repo_name=${1##*/}
@@ -111,6 +112,7 @@ sclone() {
         git submodule add "https://github.com/$1/$2" $2
     fi
 }
+
 gremote() {
     if (( $# == 2 )); then
         git remote add $1 $2
@@ -149,6 +151,9 @@ me() {
         mosh me
     fi
 }
+
+# speedtest
+alias speedtest="wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip"
 
 # doc utilities
 all2pdf() {
