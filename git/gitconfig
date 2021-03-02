@@ -7,3 +7,5 @@
     pager = delta --light
 [credential]
     helper = store
+[pull]
+	ff = only
