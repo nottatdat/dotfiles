@@ -64,3 +64,6 @@ alias cmake_vcpkg="cmake -DCMAKE_TOOLCHAIN_FILE=/home/titan/resources/src/contri
 
 # set paths for neovim
 export EDITOR="/usr/bin/nvim"
+
+# set paths for ghcup
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
