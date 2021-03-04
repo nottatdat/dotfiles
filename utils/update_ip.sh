@@ -6,6 +6,6 @@ update_ip() {
                 --data '{"type":"A","name":"ssh","content":"'"$5"'","proxied":false,"ttl":1}'
 }
 
-update_titan_ip() {
+update_home_ip() {
 	update_ip $CF_ZONE $CF_DNS_RECORD $CF_API_EMAIL $CF_API_KEY $1
 }

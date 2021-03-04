@@ -15,7 +15,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     source $HOME/.utils/kaggle.sh
     source $HOME/.utils/nvidia.sh
-    source $HOME/.utils/domain_ip_update.sh
+    source $HOME/.utils/update_ip.sh
 fi
 
 # nvim and tmux
@@ -122,8 +122,8 @@ gremote() {
 }
 
 # temperature utilities
-alias temp_cpu='watch "sensors | rg -A 4 k10temp-pci"'
-alias temp_gpu='watch nvidia-smi'
+alias gpu_temp='watch "sensors k10temp-pci"'
+alias cpu_temp='watch nvidia-smi'
 
 # ip utilities
 get_ip() {
