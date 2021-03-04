@@ -21,12 +21,14 @@ backup_file $HOME/.gitignore_global
 backup_file $HOME/.git-credentials
 backup_file $HOME/.config/alacritty/alacritty.yml
 backup_file $HOME/.tmux.conf
+backup_file $HOME/.Xresources
 
 backup_folder $HOME/.utils
 backup_folder $HOME/.keys
 backup_folder $HOME/.ssh
 backup_folder $HOME/.config/nvim
 backup_folder $HOME/.config/coc
+backup_folder $HOME/.xmonad
 
 # create symbolic links
 symlink zshrc                .zshrc
@@ -34,12 +36,14 @@ symlink git/gitconfig        .gitconfig
 symlink git/gitignore_global .gitignore_global
 symlink git/git-credentials  .git-credentials
 symlink tmux/tmux.conf       .tmux.conf
+symlink xmonad/Xresources    .Xresources
 
 symlink utils        .utils
 symlink secrets/ssh  .ssh
 symlink secrets/keys .keys
 symlink nvim         .config/
 symlink nvim/coc     .config/
+symlink xmonad       .xmonad
 
 # handle linux related dotfiles
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
