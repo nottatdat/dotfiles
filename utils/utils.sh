@@ -122,8 +122,8 @@ gremote() {
 }
 
 # temperature utilities
-alias gpu_temp='watch "sensors k10temp-pci"'
-alias cpu_temp='watch nvidia-smi'
+alias cpu_temp='watch "sensors nct6795-isa-0a20"'
+alias gpu_temp='watch nvidia-smi'
 
 # ip utilities
 get_ip() {
