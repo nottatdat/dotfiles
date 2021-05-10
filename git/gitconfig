@@ -4,7 +4,7 @@
 [core]
     excludesfile = /home/dat/.gitignore_global
     editor = /home/dat/.local/bin/nvim
-    pager = delta --light
+    pager = delta
 [credential]
     helper = store
 [pull]
