@@ -59,6 +59,10 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/Library/Developer/Toolchains/swift-latest/usr/bin:$PATH"
 fi
 
+# set paths for nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 # set paths for vcpkg
 export PATH="$HOME/src/contribute/tools/vcpkg:$PATH"
 alias cmake_vcpkg="cmake -DCMAKE_TOOLCHAIN_FILE=/home/titan/resources/src/contribute/tools/vcpkg/utils/buildsystems/vcpkg.cmake"
