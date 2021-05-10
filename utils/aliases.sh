@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ### directories aliases
 ## src directories alias
 alias src="cdwrap $HOME/src"

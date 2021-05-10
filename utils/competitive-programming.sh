@@ -1,3 +1,4 @@
+#!/bin/bash
 export CP_DIR="$HOME/src/compete/competitive-programming/"
 
 alias pi="cd $CP_DIR && cd"

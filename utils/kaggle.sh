@@ -1,3 +1,4 @@
+#!/bin/bash
 export DATA_DIR="$HOME/data"
 
 kaggle_download() {

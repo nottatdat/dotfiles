@@ -1,3 +1,4 @@
+#!/bin/bash
 GPG_UID="tatdat"
 
 encrypt() {

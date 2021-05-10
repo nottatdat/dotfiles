@@ -1,3 +1,4 @@
+#/bin/bash
 update_ip() {
 	curl -X PUT "https://api.cloudflare.com/client/v4/zones/$1/dns_records/$2" \
                 -H "X-Auth-Email: $3" \
