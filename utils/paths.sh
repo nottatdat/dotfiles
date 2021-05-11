@@ -41,31 +41,15 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 fi
 
-# set paths for macports
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    export PATH="/opt/local/bin:$PATH"
-fi
-
 # set paths for OCaml language
 test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # set paths for Rust programming language
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# set paths for TensorFlow for Swift
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    export PATH="$HOME/frameworks/tensorswift/usr/bin:$PATH"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    export PATH="/Library/Developer/Toolchains/swift-latest/usr/bin:$PATH"
-fi
-
 # set paths for nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# set paths for vcpkg
-export PATH="$HOME/src/contribute/tools/vcpkg:$PATH"
-alias cmake_vcpkg="cmake -DCMAKE_TOOLCHAIN_FILE=/home/titan/resources/src/contribute/tools/vcpkg/utils/buildsystems/vcpkg.cmake"
 
 # set paths for neovim
 export EDITOR="/usr/bin/nvim"
