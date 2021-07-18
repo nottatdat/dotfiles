@@ -3,79 +3,11 @@
 ### directories aliases
 ## src directories alias
 alias src="cdwrap $HOME/src"
-alias update_src="bash $HOME/src/update.sh"
-
-alias win="src compete"
-alias con="src contribute"
-alias new="src create"
-alias learn="src learn"
-alias dat="src personal"
-alias toy="src toy"
-alias gym="src train"
-alias work="src work"
-
-## doc directories aliases
-alias doc="cdwrap $HOME/doc"
-alias book="doc Textbooks"
-
-## dotfiles directories
-alias dot="cdwrap $HOME/dotfiles"
-alias dotvim="dot nvim"
-
-## personal directories aliases
-alias blog="dat blog"
-alias note="dat notes"
-
-## training directories aliases
-alias leet="gym leetcode"
-alias euler="gym euler"
-
-## open-source contribute directories aliases
-alias comp="con compilers"
-alias data="con data"
-alias dist="con distributed-systems"
-alias os="con os"
-alias tool="con tools"
-
-### machine learning directories
-alias ml="con machine-learning"
-alias audio="ml audio"
-alias boost="ml boost"
-alias cv="ml cv"
-alias dl="ml dl-systems"
-alias mlml="ml general"
-alias nlp="ml nlp"
-alias opt="ml optimizations"
-alias plat="ml platforms"
-alias prob="ml prob-prog"
-alias rl="ml rl"
-
-### databases directories
-alias db="con databases"
-alias pg="db postgres"
-alias msql="db mysql-5.6"
-alias redis="db redis"
-alias noria="db noria"
-
-### programming languages directories
-alias lang="con languages"
-alias rs="lang rustlang"
-alias cpp="lang cpp"
-alias py="lang python"
-alias hs="lang haskell"
-alias jl="lang julia"
-alias oml="lang ocaml"
-
-### scientic computing directories
-alias sc="con scientific-computing"
-alias gpu="sc gpu-computing"
-alias grad="sc autograd-engine"
-alias jit="sc jit"
-alias scsc="sc general"
+alias dot="cd $HOME/dotfiles"
+alias dotvim="cd $HOME/dotfiles/nvim"
 
 ### OS
 ## usual commands
-alias c="clear"
 alias cdback="cd $OLDPWD"
 alias chksum="shasum -a 256 "
 alias hs="history | grep"
@@ -154,7 +86,6 @@ alias grep="rg"
 
 ## neovim
 alias v="/usr/bin/nvim"
-alias update_v="bash $HOME/.config/nvim/update_neovim_nightly.sh"
 
 ## tmux
 alias tat="tmux attach -t"
