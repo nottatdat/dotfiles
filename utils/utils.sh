@@ -46,19 +46,8 @@ cdwrap() {
 }
 
 # files/folders utilities
-degrade() {
-    mkdir _
-    mv $1 _/
-    mv _ $1
-}
-
 backup() {
     cp $1 $1.backup
-}
-
-cache() {
-    file_name=$1
-    mv $1 ~/cache
 }
 
 queue() {
@@ -151,6 +140,8 @@ me() {
         mosh me
     fi
 }
+
+alias ssh="kitty +kitten ssh"
 
 # speedtest
 alias speedtest="wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip"
