@@ -2,11 +2,12 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# utils
 apath() {
     new_path="$(pwd)"
-	  if [ $# -eq 1 ]; then new_path=$1 fi
+    if [ $# -eq 1 ]; then new_path=$1 fi
 
-	  echo "export PATH=\"$new_path:"'$PATH"' >> $HOME/.utils/paths.sh
+	echo "export PATH=\"$new_path:"'$PATH"' >> $HOME/.utils/paths.sh
 }
 alias epath="nvim $HOME/.utils/paths.sh"
 alias path="echo -e ${PATH//:/\\n}"
@@ -25,8 +26,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 fi
 
 # set paths for go language
-export GOROOT="$HOME/.go"
-export GOPATH="$HOME/.go_workspace"
+export GOROOT="/usr/local/go"
+export GOPATH="$HOME/resources/works/go"
 export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
 # set paths for llvm

@@ -24,6 +24,11 @@ tmux_v() {
     tmux attach -t $1
 }
 
+# execute commands in one-level deep subfolder
+function run_command() {
+    for d in ./*/ ; do /bin/zsh -c "(cd "$d" && "$@")"; done
+}
+
 # helper function for cd command
 cdforward() {
     for var in "$@"; do
