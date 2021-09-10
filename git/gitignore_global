@@ -67,17 +67,10 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
-dist/
-downloads/
 eggs/
 .eggs/
-lib/
-lib64/
-parts/
 sdist/
-var/
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
@@ -166,14 +159,6 @@ cabal.project.local~
 
 .nvimlog
 
-# Swap
-[._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
-[._]*.sw[a-p]
-[._]s[a-rt-v][a-z]
-[._]ss[a-gi-z]
-[._]sw[a-p]
-
 # Session
 Session.vim
 Sessionx.vim
@@ -181,15 +166,12 @@ Sessionx.vim
 # Temporary
 .netrwhist
 *~
+
 # Auto-generated tag files
 tags
-# Persistent undo
-[._]*.un~
 
 ## Emacs
 
-*~
-\#*\#
 /.emacs.desktop
 /.emacs.desktop.lock
 *.elc
@@ -214,18 +196,11 @@ tramp
 # reftex files
 *.rel
 
-# AUCTeX auto folder
-/auto/
-
 # cask packages
 .cask/
-dist/
 
 # Flycheck
 flycheck_*.el
-
-# server auth directory
-/server/
 
 # projectiles files
 .projectile
@@ -243,8 +218,6 @@ flycheck_*.el
 ### Operating system
 
 ## Linux
-
-*~
 
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
@@ -267,9 +240,6 @@ flycheck_*.el
 
 # Icon must end with two \r
 Icon
-
-# Thumbnails
-._*
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
