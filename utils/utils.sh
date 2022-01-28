@@ -14,7 +14,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     stty intr ^o
 
     source $HOME/.utils/kaggle.sh
-    source $HOME/.utils/nvidia.sh
     source $HOME/.utils/update_ip.sh
 fi
 
@@ -146,7 +145,7 @@ me() {
     fi
 }
 
-alias ssh="kitty +kitten ssh"
+#alias ssh="kitty +kitten ssh"
 
 # speedtest
 alias speedtest="wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip"
