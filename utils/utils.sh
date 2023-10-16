@@ -8,57 +8,6 @@ green="\033[0;32m"
 yellow="\033[0;33m"
 blue="\033[0;34m"
 
-# setting for linux server
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    # change keyboard interupted to Ctrl+o
-    stty intr ^o
-
-    source $HOME/.utils/kaggle.sh
-    source $HOME/.utils/update_ip.sh
-fi
-
-# nvim and tmux
-tmux_v() {
-    tmux new-session -s -d "$1" /usr/local/bin/nvim
-    tmux attach -t $1
-}
-
-# execute commands in one-level deep subfolder
-function run_command() {
-    for d in ./*/ ; do /bin/zsh -c "(cd "$d" && "$@")"; done
-}
-
-# helper function for cd command
-cdforward() {
-    for var in "$@"; do
-        if [ -d $var ]; then
-            cd $var
-        else
-            echo "Folder $var does not exist in $(pwd)"
-            return 1
-        fi
-    done
-    return 0
-}
-
-cdwrap() {
-    if (( $# >= 1 )); then
-        cdforward $@; return $?
-    else
-        cd $HOME; return 0
-    fi
-}
-
-# files/folders utilities
-backup() {
-    cp $1 $1.backup
-}
-
-queue() {
-    file_name=$1
-    cp $1 ~/doc/queue
-}
-
 # archiver utilities
 compress() {
     tar -cvzf $1.tgz $1
@@ -95,57 +44,8 @@ gclone() {
     fi
 }
 
-sclone() {
-    if (( $# == 1 )); then
-        repo_name=${1##*/}
-        gclone $1
-        git submodule add $1 $repo_name
-    elif (( $# == 2 )); then
-        gclone $1 $2
-        git submodule add "https://github.com/$1/$2" $2
-    fi
-}
-
-gremote() {
-    if (( $# == 2 )); then
-        git remote add $1 $2
-    elif (( $# == 3 )); then
-        git remote add $1 "https://github.com/$2/$3"
-    fi
-}
-
-# temperature utilities
-alias cpu_temp='watch "sensors nct6795-isa-0a20"'
-alias gpu_temp='watch nvidia-smi'
-
-# ip utilities
-get_ip() {
-    if (( $# != 1 )); then
-        echo "Usage: get_ip <your website>"
-        return 1
-    fi
-
-    echo $(dig +short $1)
-}
-
-get_server_ip() {
-    echo $(get_ip ssh.tatd.at)
-}
-
-get_my_ip() {
-    echo $(dig +short myip.opendns.com @resolver1.opendns.com)
-}
-
-# ssh utilities
-me() {
-    if [ $(get_server_ip) = $(get_my_ip) ]; then
-        mosh me.local
-    else
-        mosh me
-    fi
-}
-
-#alias ssh="kitty +kitten ssh"
+# kitty ssh
+alias ssh="kitty +kitten ssh"
 
 # speedtest
 alias speedtest="wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip"
