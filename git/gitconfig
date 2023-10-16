@@ -1,11 +1,9 @@
 [user]
-    name = tataudat
+    name = dat
     email = me@tatd.at
 [core]
     excludesfile = /home/dat/.gitignore_global
-    editor = /home/dat/.local/bin/nvim
-    pager = delta
 [credential]
     helper = store
 [pull]
-	ff = only
+    ff = only
