@@ -1,7 +1,6 @@
 #!/bin/bash
 ## usual commands
 alias cdback="cd $OLDPWD"
-alias chksum="shasum -a 256 "
 alias hs="history | grep"
 alias now='date +"%T"'
 alias nowdate='date +"%d-%m-%Y"'
@@ -51,10 +50,9 @@ alias gclean="git clean -f -d"
 alias gd="git diff"
 alias gnew="git clean -n -d"
 alias gpo="git push origin"
-alias gpurge="git clean -x -d -f"
+alias gpo="git push downstream"
 alias gs="git status"
 alias pullo="git pull origin"
-alias pullu="git pull upstream"
 alias pullu="git pull downstream"
 
 ## ls
