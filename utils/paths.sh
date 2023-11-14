@@ -7,15 +7,14 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # go
-export GOROOT="/usr/local/go"
-export GOPATH="$HOME/resources/works/go"
-export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+export GOPATH="$HOME/.go"
+export PATH="$GOPATH/bin:$PATH"
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# neovim
-export EDITOR="/usr/bin/nvim"
+# cs
+export PATH="$PATH:$HOME/.local/share/coursier/bin"
 
-# ghcup
-[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+# emacs
+export PATH="$HOME/.config/emacs/bin:$PATH"

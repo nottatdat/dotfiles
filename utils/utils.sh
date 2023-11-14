@@ -1,3 +1,6 @@
+# ctrl+o for interruptions
+stty intr ^o
+
 export BETTER_EXCEPTIONS=1
 
 bold=$(tput bold)
@@ -9,9 +12,7 @@ yellow="\033[0;33m"
 blue="\033[0;34m"
 
 # archiver utilities
-compress() {
-    tar -cvzf $1.tgz $1
-}
+compress() {tar -cvzf $1.tgz $1}
 
 extract() {
     if [ -f $1 ] ; then
@@ -43,9 +44,6 @@ gclone() {
         git clone --recursive "https://github.com/$1/$2"
     fi
 }
-
-# kitty ssh
-alias ssh="kitty +kitten ssh"
 
 # speedtest
 alias speedtest="wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip"
